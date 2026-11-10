@@ -1,0 +1,13 @@
+# Nucleo puro Python: nessuna estensione nativa da compilare.
+# Serve per iOS (a-Shell, Pythonista) e per ogni ambiente dove opencv-python e
+# pyzbar non sono installabili.
+#
+# Con questi soli pacchetti il generatore funziona per intero, ma:
+#   - la verifica automatica di leggibilita' non e' disponibile (nessun decoder
+#     QR installato) e viene saltata dichiarandolo;
+#   - l'inquadratura non cerca il volto e ricade sul centro dell'immagine,
+#     regolabile a mano con --center e --zoom.
+
+segno>=1.6
+Pillow>=10.0
+numpy>=1.24

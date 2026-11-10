@@ -1,0 +1,19 @@
+# Installazione completa: Windows, Linux, macOS.
+# Su iOS (a-Shell, Pythonista) usare requirements-minimal.txt, perche' opencv e
+# pyzbar sono estensioni native che su quella piattaforma non esistono.
+
+# --- nucleo: basta questo per generare i codici ---
+segno>=1.6
+Pillow>=10.0
+numpy>=1.24
+
+# --- consigliati ---
+# opencv-python: verifica di leggibilita' (secondo decoder), rilevamento del
+#   volto per l'inquadratura automatica, elaborazione immagine piu' veloce.
+#   Fermo alla serie 4: OpenCV 5 ha tolto CascadeClassifier, e con esso
+#   l'inquadratura automatica sul volto. Tutto il resto funziona anche con la 5.
+opencv-python>=4.8,<5
+# pyzbar: decoder ZBar, il piu' severo dei due. Richiede la libreria nativa
+#   libzbar (l'installer di sistema la mette; su Windows serve il runtime
+#   Visual C++ 2013, vedi INSTALL.md).
+pyzbar>=0.1.9
